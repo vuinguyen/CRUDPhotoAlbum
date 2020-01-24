@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bxz-g4-D65">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--scrollview-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CRUDPhotoAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ScrollViewController" customModule="CRUDPhotoAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,6 +42,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="scrollview" id="F4L-Ps-rE5"/>
                     <connections>
                         <outlet property="middleView" destination="cCr-ay-rFc" id="Eb9-lh-nJL"/>
                         <outlet property="scrollView" destination="MUP-5G-ujR" id="JNv-6r-HMf"/>
@@ -49,7 +50,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1128.75" y="137.5"/>
+        </scene>
+        <!--pagecontrol-->
+        <scene sceneID="ztW-Xd-CWH">
+            <objects>
+                <viewController id="9sc-JK-EcI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rEx-gW-azn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TvN-oG-AJa">
+                                <rect key="frame" x="0.0" y="166" width="320" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="iMQ-4z-bkC"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="D0R-qZ-K7t" kind="embed" id="IHB-AQ-AFM"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TvN-oG-AJa" firstAttribute="leading" secondItem="US1-i2-DiY" secondAttribute="leading" id="1WR-kY-ZXW"/>
+                            <constraint firstItem="TvN-oG-AJa" firstAttribute="top" secondItem="US1-i2-DiY" secondAttribute="top" constant="166" id="iIL-HV-HlN"/>
+                            <constraint firstItem="TvN-oG-AJa" firstAttribute="trailing" secondItem="US1-i2-DiY" secondAttribute="trailing" id="u9a-2k-oth"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="US1-i2-DiY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="pagecontrol" id="0WP-43-uMJ"/>
+                    <navigationItem key="navigationItem" id="sBS-vJ-SKv"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGA-FN-MKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841.25" y="137.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8hn-N7-MBs">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bxz-g4-D65" customClass="TabBarController" customModule="CRUDPhotoAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cO7-NK-yhh">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="v7b-4K-ggG"/>
+                        <segue destination="9sc-JK-EcI" kind="relationship" relationship="viewControllers" id="1m8-Hd-vvH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBm-9b-OFS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="131.25" y="137.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Vss-0T-GQU">
+            <objects>
+                <viewController id="D0R-qZ-K7t" customClass="PageViewController" customModule="CRUDPhotoAlbum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4kP-94-TdP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g06-Gh-qdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592" y="-378"/>
         </scene>
     </scenes>
 </document>

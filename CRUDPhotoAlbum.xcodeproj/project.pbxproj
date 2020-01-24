@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		52770FE623D620F3007769C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FE523D620F3007769C8 /* AppDelegate.swift */; };
 		52770FE823D620F3007769C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FE723D620F3007769C8 /* SceneDelegate.swift */; };
-		52770FEA23D620F3007769C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FE923D620F3007769C8 /* ViewController.swift */; };
+		52770FEA23D620F3007769C8 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FE923D620F3007769C8 /* ScrollViewController.swift */; };
 		52770FED23D620F3007769C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52770FEB23D620F3007769C8 /* Main.storyboard */; };
 		52770FEF23D620F4007769C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52770FEE23D620F4007769C8 /* Assets.xcassets */; };
 		52770FF223D620F4007769C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52770FF023D620F4007769C8 /* LaunchScreen.storyboard */; };
 		52770FFD23D620F4007769C8 /* CRUDPhotoAlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FFC23D620F4007769C8 /* CRUDPhotoAlbumTests.swift */; };
+		52C0ED2023DA5323006BF0D6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C0ED1F23DA5323006BF0D6 /* TabBarController.swift */; };
+		52C0ED2223DA5421006BF0D6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C0ED2123DA5421006BF0D6 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,7 @@
 		52770FE223D620F3007769C8 /* CRUDPhotoAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRUDPhotoAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52770FE523D620F3007769C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52770FE723D620F3007769C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52770FE923D620F3007769C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52770FE923D620F3007769C8 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		52770FEC23D620F3007769C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52770FEE23D620F4007769C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52770FF123D620F4007769C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		52770FF823D620F4007769C8 /* CRUDPhotoAlbumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRUDPhotoAlbumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52770FFC23D620F4007769C8 /* CRUDPhotoAlbumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDPhotoAlbumTests.swift; sourceTree = "<group>"; };
 		52770FFE23D620F4007769C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C0ED1F23DA5323006BF0D6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		52C0ED2123DA5421006BF0D6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +85,13 @@
 			children = (
 				52770FE523D620F3007769C8 /* AppDelegate.swift */,
 				52770FE723D620F3007769C8 /* SceneDelegate.swift */,
-				52770FE923D620F3007769C8 /* ViewController.swift */,
+				52770FE923D620F3007769C8 /* ScrollViewController.swift */,
 				52770FEB23D620F3007769C8 /* Main.storyboard */,
 				52770FEE23D620F4007769C8 /* Assets.xcassets */,
 				52770FF023D620F4007769C8 /* LaunchScreen.storyboard */,
 				52770FF323D620F4007769C8 /* Info.plist */,
+				52C0ED1F23DA5323006BF0D6 /* TabBarController.swift */,
+				52C0ED2123DA5421006BF0D6 /* PageViewController.swift */,
 			);
 			path = CRUDPhotoAlbum;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52770FEA23D620F3007769C8 /* ViewController.swift in Sources */,
+				52770FEA23D620F3007769C8 /* ScrollViewController.swift in Sources */,
+				52C0ED2223DA5421006BF0D6 /* PageViewController.swift in Sources */,
+				52C0ED2023DA5323006BF0D6 /* TabBarController.swift in Sources */,
 				52770FE623D620F3007769C8 /* AppDelegate.swift in Sources */,
 				52770FE823D620F3007769C8 /* SceneDelegate.swift in Sources */,
 			);
