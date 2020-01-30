@@ -9,5 +9,25 @@
 import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet var imageView: UIImageView!
     
+    var image: UIImage? {
+        didSet {
+            setup()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+//        imageView.contentMode = .scaleAspectFit
+//        guard let testName = image else { return }
+//        imageView.image = testName
+    }
+    
+    private func setup() {
+        guard let testName = image else { return }
+        imageView.image = testName
+    }
+
 }
