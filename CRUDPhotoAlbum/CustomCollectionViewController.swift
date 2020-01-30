@@ -41,10 +41,8 @@ class CustomCollectionViewController: UIViewController {
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        // register collection view cell: https://www.hackingwithswift.com/example-code/uikit/how-to-register-a-cell-for-uicollectionview-reuse
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: reuseId)
         // TODO: figure out scroll direction
-        
+        collectionView.isPagingEnabled = true
     }
 }
 
@@ -75,8 +73,7 @@ extension CustomCollectionViewController: UIScrollViewDelegate {
 extension CustomCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // https://stackoverflow.com/questions/29986379/uicollectionview-custom-cell-to-fill-width-in-swift
-        let frame = collectionView.frame
-        return CGSize(width: frame.width,
-                      height: frame.height)
+        return CGSize(width: view.bounds.width,
+                      height: collectionView.frame.height)
     }
 }

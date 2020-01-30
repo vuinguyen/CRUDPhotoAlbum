@@ -68,10 +68,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="143.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c6y-YB-wQd">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c6y-YB-wQd">
                                         <rect key="frame" x="0.0" y="143.5" width="320" height="144"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5lQ-9e-Noy">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5lQ-9e-Noy">
                                             <size key="itemSize" width="320" height="144"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -98,7 +98,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="320" height="144"/>
                                                 <connections>
-                                                    <outlet property="imageView" destination="2HO-fa-4Vf" id="lnO-N1-fz1"/>
+                                                    <outlet property="imageView" destination="2HO-fa-4Vf" id="ryL-Kc-YEw"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
