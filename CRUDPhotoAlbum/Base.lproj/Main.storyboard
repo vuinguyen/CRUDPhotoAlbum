@@ -68,7 +68,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="143.5"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c6y-YB-wQd">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c6y-YB-wQd">
                                         <rect key="frame" x="0.0" y="143.5" width="320" height="144"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5lQ-9e-Noy">
@@ -105,7 +105,20 @@
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rd0-Pp-miU">
                                         <rect key="frame" x="0.0" y="287.5" width="320" height="143.5"/>
+                                        <subviews>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="S0u-8h-CGD">
+                                                <rect key="frame" x="8" y="20" width="304" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="UXi-Rh-AMs"/>
+                                                </constraints>
+                                            </pageControl>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="S0u-8h-CGD" secondAttribute="trailing" constant="8" id="END-aB-aaI"/>
+                                            <constraint firstItem="S0u-8h-CGD" firstAttribute="top" secondItem="rd0-Pp-miU" secondAttribute="top" constant="20" symbolic="YES" id="aEY-Mu-81C"/>
+                                            <constraint firstItem="S0u-8h-CGD" firstAttribute="leading" secondItem="rd0-Pp-miU" secondAttribute="leading" constant="8" id="gVt-xy-73q"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -123,6 +136,7 @@
                     <connections>
                         <outlet property="bottomView" destination="rd0-Pp-miU" id="hRA-pL-6tO"/>
                         <outlet property="collectionView" destination="c6y-YB-wQd" id="O1h-Dt-315"/>
+                        <outlet property="pageControl" destination="S0u-8h-CGD" id="97G-hS-RQ7"/>
                         <outlet property="topView" destination="ZpE-zo-IOQ" id="Jcz-U0-rQU"/>
                     </connections>
                 </viewController>
