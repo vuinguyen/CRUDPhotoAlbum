@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -122,16 +123,61 @@
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kME-fG-uai">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="253"/>
-                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="50" width="320" height="295"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cU8-5N-tLe">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                                                <subviews>
+                                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jAr-Iw-Wc3">
+                                                        <rect key="frame" x="0.0" y="98" width="160" height="74"/>
+                                                        <items>
+                                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="iHa-v2-dMf"/>
+                                                            <barButtonItem title="Grid" id="3lc-nO-dtI"/>
+                                                            <barButtonItem systemItem="trash" id="vKJ-c8-g7K"/>
+                                                            <barButtonItem systemItem="camera" id="Iae-jn-TfX"/>
+                                                            <barButtonItem title="Photos" id="yf0-mc-WZn"/>
+                                                        </items>
+                                                    </toolbar>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-8k-LlK">
+                                                        <rect key="frame" x="0.0" y="73.5" width="320" height="221.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kMm-3u-IuB">
+                                                            <size key="itemSize" width="50" height="50"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dYW-mU-dOg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5TZ-nj-Xg9">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </collectionViewCellContentView>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="jAr-Iw-Wc3" firstAttribute="height" secondItem="cU8-5N-tLe" secondAttribute="height" multiplier="0.25" id="VCC-nm-4qe"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="cU8-5N-tLe" secondAttribute="trailing" id="51Z-fW-mas"/>
+                                            <constraint firstItem="cU8-5N-tLe" firstAttribute="top" secondItem="kME-fG-uai" secondAttribute="top" id="O4W-RM-iC5"/>
+                                            <constraint firstItem="cU8-5N-tLe" firstAttribute="leading" secondItem="kME-fG-uai" secondAttribute="leading" id="Tu1-a0-yT5"/>
+                                            <constraint firstAttribute="bottom" secondItem="cU8-5N-tLe" secondAttribute="bottom" id="hta-n1-QuR"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kU4-X8-Ahu">
-                                        <rect key="frame" x="0.0" y="303" width="320" height="128"/>
+                                        <rect key="frame" x="0.0" y="345" width="320" height="86"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="kU4-X8-Ahu" firstAttribute="height" secondItem="QW0-uC-JkV" secondAttribute="height" multiplier="0.296984" id="gYr-gQ-Qqe"/>
+                                    <constraint firstItem="kU4-X8-Ahu" firstAttribute="height" secondItem="QW0-uC-JkV" secondAttribute="height" multiplier="0.2" id="gYr-gQ-Qqe"/>
                                     <constraint firstItem="9Y7-z4-qzG" firstAttribute="height" secondItem="QW0-uC-JkV" secondAttribute="height" multiplier="0.116009" id="vKO-xK-0O8"/>
                                 </constraints>
                             </stackView>
