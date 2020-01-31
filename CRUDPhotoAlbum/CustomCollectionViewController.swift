@@ -10,7 +10,10 @@ import UIKit
 
 class CustomCollectionViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet var collectionView: UICollectionView!
+  @IBOutlet var pageControl: UIPageControl!
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

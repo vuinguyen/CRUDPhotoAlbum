@@ -110,7 +110,7 @@
         <!--collection-->
         <scene sceneID="FnW-jX-rJa">
             <objects>
-                <viewController id="nRk-NH-mIg" sceneMemberID="viewController">
+                <viewController id="nRk-NH-mIg" customClass="CustomCollectionViewController" customModule="CRUDPhotoAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6F-Hr-dap">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
                                                 <subviews>
                                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jAr-Iw-Wc3">
-                                                        <rect key="frame" x="0.0" y="98" width="160" height="74"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                                         <items>
                                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="iHa-v2-dMf"/>
                                                             <barButtonItem title="Grid" id="3lc-nO-dtI"/>
@@ -139,7 +139,7 @@
                                                         </items>
                                                     </toolbar>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-8k-LlK">
-                                                        <rect key="frame" x="0.0" y="73.5" width="320" height="221.5"/>
+                                                        <rect key="frame" x="0.0" y="65" width="320" height="193"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kMm-3u-IuB">
                                                             <size key="itemSize" width="50" height="50"/>
@@ -158,9 +158,14 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
+                                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-I6-pnX">
+                                                        <rect key="frame" x="0.0" y="258" width="320" height="37"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </pageControl>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="jAr-Iw-Wc3" firstAttribute="height" secondItem="cU8-5N-tLe" secondAttribute="height" multiplier="0.25" id="VCC-nm-4qe"/>
+                                                    <constraint firstItem="jAr-Iw-Wc3" firstAttribute="height" secondItem="cU8-5N-tLe" secondAttribute="height" multiplier="0.22" id="VCC-nm-4qe"/>
+                                                    <constraint firstItem="F0E-I6-pnX" firstAttribute="height" secondItem="cU8-5N-tLe" secondAttribute="height" multiplier="0.125424" id="eg2-yO-Q7l"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -192,17 +197,21 @@
                         <viewLayoutGuide key="safeArea" id="45M-HE-P9j"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="collection" id="yRT-w5-oip"/>
+                    <connections>
+                        <outlet property="collectionView" destination="gJI-8k-LlK" id="JrF-xw-WFz"/>
+                        <outlet property="pageControl" destination="F0E-I6-pnX" id="cGw-gl-bT3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bo-uf-caD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652.5" y="872.5"/>
+            <point key="canvasLocation" x="-433" y="873"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Vss-0T-GQU">
             <objects>
                 <viewController id="D0R-qZ-K7t" customClass="PageViewController" customModule="CRUDPhotoAlbum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4kP-94-TdP">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6EH-cA-eUt"/>
