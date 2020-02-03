@@ -17,6 +17,7 @@
 		52770FFD23D620F4007769C8 /* CRUDPhotoAlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FFC23D620F4007769C8 /* CRUDPhotoAlbumTests.swift */; };
 		52C0ED2023DA5323006BF0D6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C0ED1F23DA5323006BF0D6 /* TabBarController.swift */; };
 		52C0ED2223DA5421006BF0D6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C0ED2123DA5421006BF0D6 /* PageViewController.swift */; };
+		52C2554923E89F2E0037D290 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C2554823E89F2E0037D290 /* CustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		52770FFE23D620F4007769C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52C0ED1F23DA5323006BF0D6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		52C0ED2123DA5421006BF0D6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		52C2554823E89F2E0037D290 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				52C0ED1F23DA5323006BF0D6 /* TabBarController.swift */,
 				52C0ED2123DA5421006BF0D6 /* PageViewController.swift */,
 				523CF89623E4A5730012D37C /* CustomCollectionViewController.swift */,
+				52C2554823E89F2E0037D290 /* CustomCollectionViewCell.swift */,
 			);
 			path = CRUDPhotoAlbum;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52770FEA23D620F3007769C8 /* ScrollViewController.swift in Sources */,
+				52C2554923E89F2E0037D290 /* CustomCollectionViewCell.swift in Sources */,
 				52C0ED2223DA5421006BF0D6 /* PageViewController.swift in Sources */,
 				52C0ED2023DA5323006BF0D6 /* TabBarController.swift in Sources */,
 				52770FE623D620F3007769C8 /* AppDelegate.swift in Sources */,
