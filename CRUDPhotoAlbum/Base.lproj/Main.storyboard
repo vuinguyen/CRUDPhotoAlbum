@@ -132,10 +132,26 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="78.5"/>
                                                         <items>
                                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="iHa-v2-dMf"/>
-                                                            <barButtonItem title="Grid" id="3lc-nO-dtI"/>
-                                                            <barButtonItem systemItem="trash" id="vKJ-c8-g7K"/>
-                                                            <barButtonItem systemItem="camera" id="Iae-jn-TfX"/>
-                                                            <barButtonItem title="Photos" id="yf0-mc-WZn"/>
+                                                            <barButtonItem title="Grid" id="3lc-nO-dtI">
+                                                                <connections>
+                                                                    <action selector="displayPhotoGrid:" destination="nRk-NH-mIg" id="7Hh-pQ-Muo"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem systemItem="trash" id="vKJ-c8-g7K">
+                                                                <connections>
+                                                                    <action selector="deletePhoto:" destination="nRk-NH-mIg" id="piY-l2-Zoy"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem systemItem="camera" id="Iae-jn-TfX">
+                                                                <connections>
+                                                                    <action selector="pickPhotoFromCamera:" destination="nRk-NH-mIg" id="1hk-Yw-PvU"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                            <barButtonItem title="Album" id="yf0-mc-WZn">
+                                                                <connections>
+                                                                    <action selector="pickPhotoFromAlbum:" destination="nRk-NH-mIg" id="VnF-aA-r05"/>
+                                                                </connections>
+                                                            </barButtonItem>
                                                         </items>
                                                     </toolbar>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-8k-LlK">
@@ -212,6 +228,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="collection" id="yRT-w5-oip"/>
                     <connections>
+                        <outlet property="cameraButton" destination="Iae-jn-TfX" id="UZC-Sy-ops"/>
                         <outlet property="collectionView" destination="gJI-8k-LlK" id="JrF-xw-WFz"/>
                         <outlet property="pageControl" destination="F0E-I6-pnX" id="cGw-gl-bT3"/>
                     </connections>
