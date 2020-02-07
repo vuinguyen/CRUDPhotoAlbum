@@ -24,9 +24,21 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
   @IBAction func deletePhoto(_ sender: Any) {
     print("delete this photo!")
-    deleteImage()
-  }
+    let destroyAction = UIAlertAction(title: "Delete",
+                                      style: .destructive) { (action) in
+                                      self.deleteImage()
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    let alert = UIAlertController(title: "Delete Picture?", message: "",
+                                  preferredStyle: .actionSheet)
+    alert.addAction(destroyAction)
+    alert.addAction(cancelAction)
 
+    // On iPad, action sheets must be presented from a popover.
+    alert.popoverPresentationController?.barButtonItem = trashButton
+
+    self.present(alert, animated: true, completion: nil)
+  }
 
   @IBAction func pickPhotoFromCamera(_ sender: Any) {
     print("display camera function")
