@@ -38,8 +38,7 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   
   let reuseID = "photoCell"
 
-  //var photos: [UIImage] = []
-
+ // var photos: [UIImage] = []
 
   lazy var photos: [UIImage] = { [weak self] in
     var images: [UIImage] = []
@@ -51,7 +50,6 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
     return images
     }()
-
 
   /*
    // MARK: - Navigation
@@ -109,23 +107,21 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
   private func addImage(image: UIImage) {
     var currentPageIndex = IndexPath(row: 0, section: 0)
-    if let index = collectionView.indexPathsForVisibleItems.first  {
-      currentPageIndex = index
+
+    if ((pageControl?.currentPage) != nil) {
+      currentPageIndex = IndexPath(row: pageControl.currentPage, section: 0)
     }
+
     print("at page \(currentPageIndex)")
     // insert picture at that spot
-    // refresh collection view
-
-    // the insertion path is not always in the right spot!
     photos.insert(image, at: currentPageIndex.row)
-    //pageControl.currentPage = currentPageIndex
+    // refresh collection view
     collectionView.reloadData()
 
-    // scroll to newly added item is working!
+    // scroll to newly added item
     pageControl.numberOfPages = photos.count
     collectionView.scrollToItem(at: currentPageIndex, at: .centeredHorizontally, animated: true)
 
-    //configurePageControl()
     pageControl.currentPage = currentPageIndex.row
   }
 }
@@ -153,12 +149,9 @@ extension CustomCollectionViewController: UICollectionViewDelegate {
     // when deleting a cell
   }
 
-
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    //configurePageControl()
-    //collectionView.reloadData()
-    //pageControl.currentPage = indexPath.row
-    print("willDisplay, indexPath is \(indexPath)")
+    // about to add a cell
+    //print("willDisplay, indexPath is \(indexPath)")
   }
 
 
