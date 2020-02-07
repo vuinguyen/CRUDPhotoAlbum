@@ -231,6 +231,7 @@
                         <outlet property="cameraButton" destination="Iae-jn-TfX" id="UZC-Sy-ops"/>
                         <outlet property="collectionView" destination="gJI-8k-LlK" id="JrF-xw-WFz"/>
                         <outlet property="pageControl" destination="F0E-I6-pnX" id="cGw-gl-bT3"/>
+                        <outlet property="trashButton" destination="vKJ-c8-g7K" id="6ca-B6-N6W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bo-uf-caD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

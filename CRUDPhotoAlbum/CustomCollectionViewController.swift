@@ -14,7 +14,9 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   @IBOutlet var pageControl: UIPageControl!
 
   @IBOutlet var cameraButton: UIBarButtonItem!
-
+  
+  @IBOutlet var trashButton: UIBarButtonItem!
+  
   @IBAction func displayPhotoGrid(_ sender: Any) {
     print("selected display photo grid")
   }
@@ -22,6 +24,7 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
   @IBAction func deletePhoto(_ sender: Any) {
     print("delete this photo!")
+    deleteImage()
   }
 
 
@@ -70,7 +73,12 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    configureButtons()
+  }
+
+  private func configureButtons() {
     cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    trashButton.isEnabled = photos.count > 0 ? true : false
   }
 
   private func configurePageControl() {
@@ -124,6 +132,27 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
     pageControl.currentPage = currentPageIndex.row
   }
+
+  private func deleteImage() {
+
+    if ((pageControl?.currentPage) == nil) {
+      print("no image to delete")
+      return
+    }
+
+    let currentPageIndex = IndexPath(row: pageControl.currentPage, section: 0)
+    print("at page \(currentPageIndex)")
+    // remove picture at that spot
+    photos.remove(at: currentPageIndex.row)
+    // refresh collection view
+    collectionView.reloadData()
+
+    // scroll to newly added item
+    pageControl.numberOfPages = photos.count
+    collectionView.scrollToItem(at: currentPageIndex, at: .centeredHorizontally, animated: true)
+
+    pageControl.currentPage = currentPageIndex.row
+  }
 }
 
 extension CustomCollectionViewController: UICollectionViewDataSource {
@@ -147,11 +176,13 @@ extension CustomCollectionViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     // when deleting a cell
+    trashButton.isEnabled = photos.count > 0 ? true : false
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     // about to add a cell
     //print("willDisplay, indexPath is \(indexPath)")
+    trashButton.isEnabled = photos.count > 0 ? true : false
   }
 
 
