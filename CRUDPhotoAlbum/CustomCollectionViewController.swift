@@ -13,12 +13,13 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var pageControl: UIPageControl!
 
+  @IBOutlet var gridButton: UIBarButtonItem!
   @IBOutlet var cameraButton: UIBarButtonItem!
-  
   @IBOutlet var trashButton: UIBarButtonItem!
   
   @IBAction func displayPhotoGrid(_ sender: Any) {
     print("selected display photo grid")
+    performSegue(withIdentifier: "displayGrid", sender: nil)
   }
 
 
@@ -66,15 +67,18 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
     return images
     }()
 
-  /*
+
    // MARK: - Navigation
 
    // In a storyboard-based application, you will often want to do a little preparation before navigation
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
+    if segue.identifier == "displayGrid" {
+      print("lets segue to the grid")
+      let albumViewController = segue.destination as! AlbumCollectionViewController
+      albumViewController.photos = photos
+    }
    }
-   */
+
   // MARK: - Lifecycle Methods
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -91,6 +95,7 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   private func configureButtons() {
     cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     trashButton.isEnabled = photos.count > 0 ? true : false
+    gridButton.isEnabled = photos.count > 0 ? true: false
   }
 
   private func configurePageControl() {
@@ -188,16 +193,13 @@ extension CustomCollectionViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     // when deleting a cell
-    trashButton.isEnabled = photos.count > 0 ? true : false
+    configureButtons()
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     // about to add a cell
-    //print("willDisplay, indexPath is \(indexPath)")
-    trashButton.isEnabled = photos.count > 0 ? true : false
+    configureButtons()
   }
-
-
 }
 
 extension CustomCollectionViewController: UICollectionViewDelegateFlowLayout {
