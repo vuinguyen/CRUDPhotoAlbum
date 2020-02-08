@@ -53,6 +53,7 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   }
   
   let reuseID = "photoCell"
+  var deletedIndexPath: IndexPath?
 
  // var photos: [UIImage] = []
 
@@ -151,14 +152,28 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   }
 
   private func deleteImage() {
-
+    //let updatedPageIndex = pageControl.currentPage == photos.count ?
+    // IndexPath(row: pageControl.currentPage-1, section: 0) :
+    // IndexPath(row: pageControl.currentPage, section: 0)
     if ((pageControl?.currentPage) == nil) {
       print("no image to delete")
       return
     }
 
+   // let currentPageIndex = IndexPath(row: pageControl.currentPage, section: 0)
+    /*
+    guard let currentPageIndex = deletedIndexPath else {
+      return
+    }
+ */
     let currentPageIndex = IndexPath(row: pageControl.currentPage, section: 0)
-    print("at page \(currentPageIndex)")
+    let updatedPageIndex = pageControl.currentPage == photos.count ?
+     // currentPageIndex.formIndex(before: &currentPageIndex.item)   :
+      IndexPath(row: (currentPageIndex.row - 1), section: currentPageIndex.section) :
+    currentPageIndex
+
+    print("at page \(currentPageIndex.row)")
+    print("updated page \(updatedPageIndex.row)")
     // remove picture at that spot
     photos.remove(at: currentPageIndex.row)
     // refresh collection view
@@ -166,9 +181,15 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
 
     // scroll to newly added item
     pageControl.numberOfPages = photos.count
-    collectionView.scrollToItem(at: currentPageIndex, at: .centeredHorizontally, animated: true)
 
-    pageControl.currentPage = currentPageIndex.row
+    // I am not scrolling to the right spot if the updatedPageIndex has changed
+//collectionView.scrollToItem(at: currentPageIndex, at: .centeredHorizontally, animated: true)
+    collectionView.scrollToItem(at: updatedPageIndex, at: .centeredHorizontally, animated: true)
+
+    // it is displaying the right dots if using updatedPageIndex
+   // pageControl.currentPage = currentPageIndex.row
+    pageControl.currentPage = updatedPageIndex.row
+
   }
 }
 
@@ -193,6 +214,7 @@ extension CustomCollectionViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     // when deleting a cell
+    deletedIndexPath = indexPath
     configureButtons()
   }
 
