@@ -10,8 +10,6 @@ Thanks to Wikimedia Commons for the pictures.
 
 Demo of app:
 
-[demo of adding pictures to album]
-(demo/PhotoAlbumDemo_Add.gif)
+[demo of adding pictures to album](demo/PhotoAlbumDemo_Add.gif)
 
-[demo of deleting pictures from album]
-(demo/PhotoAlbumDemo_Delete.gif)
+[demo of deleting pictures from album](demo/PhotoAlbumDemo_Delete.gif)
