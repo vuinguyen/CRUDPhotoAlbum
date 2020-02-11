@@ -237,6 +237,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bo-uf-caD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tCc-gw-AJL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-723.75" y="430.98591549295776"/>
         </scene>
@@ -278,6 +279,7 @@
                                 <size key="customSize" width="101" height="102"/>
                                 <connections>
                                     <outlet property="imageView" destination="64C-iC-O8l" id="ZAV-mK-cmd"/>
+                                    <segue destination="tCc-gw-AJL" kind="unwind" identifier="ReturnToCustomControllerSegue" unwindAction="returnFromAlbum:" id="QZp-nh-ZEM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

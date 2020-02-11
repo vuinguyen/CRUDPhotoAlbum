@@ -16,7 +16,15 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   @IBOutlet var gridButton: UIBarButtonItem!
   @IBOutlet var cameraButton: UIBarButtonItem!
   @IBOutlet var trashButton: UIBarButtonItem!
-  
+
+  @IBAction func returnFromAlbum(_ unwindSegue: UIStoryboardSegue) {
+    print("returned from Album!")
+    if let selectedAlbumIndex = selectedAlbumIndex {
+      collectionView.scrollToItem(at: selectedAlbumIndex, at: .centeredHorizontally, animated: true)
+      pageControl.currentPage = selectedAlbumIndex.row
+    }
+  }
+
   @IBAction func displayPhotoGrid(_ sender: Any) {
     print("selected display photo grid")
     performSegue(withIdentifier: "displayGrid", sender: nil)
@@ -53,6 +61,7 @@ class CustomCollectionViewController: UIViewController, UINavigationControllerDe
   }
   
   let reuseID = "photoCell"
+  var selectedAlbumIndex: IndexPath?
 
  // var photos: [UIImage] = []
 
